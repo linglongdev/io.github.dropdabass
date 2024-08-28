@@ -1,0 +1,49 @@
+From d548a929ce55161c5318103af04fe45e67afa956 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 15 Aug 2024 09:53:23 +0800
+Subject: [PATCH] install
+
+---
+ bomb.desktop | 11 +++++++++++
+ bomb.pro     |  8 ++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 bomb.desktop
+
+diff --git a/bomb.desktop b/bomb.desktop
+new file mode 100644
+index 0000000..acf4765
+--- /dev/null
++++ b/bomb.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Categories=Accessibility;Qt;Utility;
++Exec=bomb
++Name=bomb
++Name[zh_CN]=bomb
++Icon=extrabomb
++StartupNotify=false
++Terminal=false
++Type=Application
++GenericName=bomb
++Version=1.0
+\ No newline at end of file
+diff --git a/bomb.pro b/bomb.pro
+index 1da9d6d..dc612fa 100644
+--- a/bomb.pro
++++ b/bomb.pro
+@@ -44,3 +44,11 @@ OTHER_FILES += \
+     qml/bomb/StartScreen.qml \
+     qml/bomb/Checkbox.qml \
+     HugeArena.map
++
++target.path = $$PREFIX/bin
++desktop.files = bomb.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = sprites/extrabomb.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.43.4
+
